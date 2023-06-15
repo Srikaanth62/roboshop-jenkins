@@ -4,6 +4,7 @@
     state: directory
 
 - name: copy xml file
+  become: yes
   ansible.builtin.template:
     src: sjob.xml
     dest: /tmp/test/xml
