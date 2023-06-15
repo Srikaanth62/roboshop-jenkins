@@ -1,3 +1,8 @@
+- name: Create destination directory
+  file:
+    path: /tmp/test
+    state: directory
+
 - name: copy xml file
   ansible.builtin.template:
     src: sjob.xml
