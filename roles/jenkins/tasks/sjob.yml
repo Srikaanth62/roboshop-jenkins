@@ -9,7 +9,7 @@
 
 - name: Print job_name variable
   debug:
-    var: job_name
+    var: "{{item.job_name}}"
 
 
 - name: Create destination directory
