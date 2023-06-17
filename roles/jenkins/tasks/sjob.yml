@@ -7,6 +7,11 @@
   register: jenkins_job_status
   ignore_errors: true
 
+- name: Print job_name variable
+  debug:
+    var: job_name
+
+
 - name: Create destination directory
   file:
     path: /tmp/test
