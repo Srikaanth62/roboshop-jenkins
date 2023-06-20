@@ -10,6 +10,7 @@ def call() {
         }
         parameters {
             choice(name: 'env', choices: ['dev', 'prod'], description: 'Pick environment')
+            choice(name: 'action', choices: ['apply', 'destroy'], description: 'Pick action')
         }
         stages {
             stage('terraform INIT') {
@@ -20,7 +21,7 @@ def call() {
             }
             stage('terraform APPLY') {
                 steps {
-                    sh 'terraform destroy -auto-approve -var-file=env-${env}/main.tfvars'
+                    sh 'terraform ${action} -auto-approve -var-file=env-${env}/main.tfvars'
                 }
             }
 
