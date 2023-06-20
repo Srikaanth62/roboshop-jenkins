@@ -18,11 +18,11 @@ def call() {
 
         stages {
 
-            stage('Code Compile') {
-                steps {
-                    sh 'mvn compile'
-                }
-            }
+//            stage('Code Compile') {
+//                steps {
+//                    sh 'mvn compile'
+//                }
+//            }
 
             stage('Code Quality') {
                 steps {
